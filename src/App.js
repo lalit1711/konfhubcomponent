@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import InputBox from './components/InputBox';
 import AutoComplete from './components/AutoComplete';
+import InputTags from './components/InputTags';
 import './App.css';
 import 'bulma/css/bulma.min.css'
 import 'font-awesome/css/font-awesome.min.css';
@@ -15,12 +16,14 @@ function App() {
   return (
     <div>
       <br/>
-      <AutoComplete value="" data={data} leftIcon="search" placeholder="Autocomplete" loading={loading}  />
+      <AutoComplete value="" data={data} leftIcon="search" placeholder="Autocomplete"  />
       &nbsp;
       <br/>
-      <InputBox type="email" name="Enter Email" isRequired={true} case="none" value="" leftIcon="envelope" rightIcon="check" />
+      <InputBox type="time" name="Enter Link" isRequired={true} case="none" value="" leftIcon="calendar" rightIcon="check" loading={loading}  />
       <br/>
       <button className="btn btn-primary" onClick={e => {changeLoadState()}}>Loading</button>
+      <br />
+      <InputTags placeholder="Tags" leftIcon="search"  />
     </div>
   );
 }

@@ -1,5 +1,4 @@
 import React,{useState} from 'react';
-import InputBox from './InputBox';
 
 const AutoComplete = (props) => {
     const[value, setValue] = useState(props.value);
@@ -8,6 +7,8 @@ const AutoComplete = (props) => {
     const _hasRightIcon = props.rightIcon !== undefined ? props.loading === "" || props.loading === undefined ? " has-icons-right" : "" : "";
     const _isLoading = props.loading !== undefined ? props.loading : "";
     const changeTheValue = (v) => {
+        console.log(v);
+        v = v.value;
         if(v.trim()!== ""){
             setAutoComp("true");
             setValue(v);
@@ -25,7 +26,7 @@ const AutoComplete = (props) => {
         <nav className="">
         <div className="">
             <div className={"control " + _isLoading + _hasLeftIcon + _hasRightIcon }>
-            <input value={value} className="input" type="text" placeholder={props.placeholder} onChange={e => {changeTheValue(e.target.value)}} />
+            <input value={value} className="input" type="text" placeholder={props.placeholder} onKeyDownCapture={e => {console.log(e.key)}} onChange={e => {changeTheValue(e.target)}} />
             {
                 (()=> {
                     if(props.leftIcon !== undefined){
