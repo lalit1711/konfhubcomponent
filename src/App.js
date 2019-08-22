@@ -14,8 +14,13 @@ function App() {
    };
   return (
     <div>
-      <AutoComplete value="" data={data} leftIcon="search" placeholder="Autocomplete"  />
-      <InputBox type="email" name="Enter Email" isRequired={true} case="none" value="" max_length={100} min_length={2} rightIcon="check" />
+      <br/>
+      <AutoComplete value="" data={data} leftIcon="search" placeholder="Autocomplete" loading={loading}  />
+      &nbsp;
+      <br/>
+      <InputBox type="email" name="Enter Email" isRequired={true} case="none" value="" leftIcon="envelope" rightIcon="check" />
+      <br/>
+      <button className="btn btn-primary" onClick={e => {changeLoadState()}}>Loading</button>
     </div>
   );
 }
