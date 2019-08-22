@@ -23,7 +23,7 @@ function App() {
       <br/>
       <button className="btn btn-primary" onClick={e => {changeLoadState()}}>Loading</button>
       <br />
-      <InputTags placeholder="Tags" leftIcon="search"  />
+      <InputTags placeholder="Tags" leftIcon="calendar"  />
     </div>
   );
 }
