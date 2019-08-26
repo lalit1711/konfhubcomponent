@@ -18,7 +18,8 @@ const InputTags = (props) => {
             const _tempData = data.filter(e => {
                 return e == newData
             })
-            if(!_tempData.length)setData([...data,newData])
+            const _maxTag = props.maxElement === undefined ? 100 : props.maxElement;
+            if(data.length < _maxTag && !_tempData.length)setData([...data,newData])
             setNewData("");
         }else if(v == 8 && newData === ""){
                 deleteTag(data.length - 1);
@@ -46,6 +47,7 @@ const Tags = (props) => {
     
     return(
         <span className="tag is-light is-rounded">{props.data} &nbsp;<i style={styles.showPointer} className="fa fa-close" onClick={e=>{props.deleteTag(props.index)}}></i></span>
+        
     )
 }
 

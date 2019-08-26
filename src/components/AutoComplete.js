@@ -7,7 +7,6 @@ const AutoComplete = (props) => {
     const _hasRightIcon = props.rightIcon !== undefined ? props.loading === "" || props.loading === undefined ? " has-icons-right" : "" : "";
     const _isLoading = props.loading !== undefined ? props.loading : "";
     const changeTheValue = (v) => {
-        console.log(v);
         v = v.value;
         if(v.trim()!== ""){
             setAutoComp("true");
@@ -26,7 +25,7 @@ const AutoComplete = (props) => {
         <nav className="">
         <div className="">
             <div className={"control " + _isLoading + _hasLeftIcon + _hasRightIcon }>
-            <input value={value} className="input" type="text" placeholder={props.placeholder} onKeyDownCapture={e => {console.log(e.key)}} onChange={e => {changeTheValue(e.target)}} />
+            <input value={value} className="input" type="text" placeholder={props.placeholder} onKeyDownCapture={e => {}} onChange={e => {changeTheValue(e.target)}} />
             {
                 (()=> {
                     if(props.leftIcon !== undefined){
@@ -53,7 +52,7 @@ const AutoComplete = (props) => {
 
 const LeftIcon = (props) => {
     return(
-        <span className="icon is-small is-left">
+        <span className="icon is-small is-left active">
             <i className={"fa fa-"+props.font}></i>
         </span>
     )
@@ -89,7 +88,7 @@ const SearchElement = (props) => {
             {
                 _data.map((v,i) => {
                     return(
-                        <span key={i}  className="panel-block is-active" onClick ={e => {setValue(v)}}>
+                        <span key={i}  className="panel-block " onClick ={e => {setValue(v)}}>
                             {v}
                         </span>
                     )

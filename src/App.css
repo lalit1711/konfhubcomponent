@@ -23,11 +23,51 @@
   color: #61dafb;
 }
 
+.k-circleborder{
+  border-radius: 50%;
+}
+.is-dropdown-active{
+  display: block;
+}
+.is-not-active{
+  display: none;
+}
+
+.is-konfhub-navbar{
+  background: #1f3a93 !important;
+}
+.navbar-item, .navbar-link {
+  color: white !important;
+}
+.navbar-item:hover, .navbar-link:hover {
+  color: #1f3a93 !important;
+}
+.navbar-burger {
+  background-color: rgba(0,0,0,.05);
+  color: white !important;
+  cursor: pointer;
+}
+
+.section-border{
+  border: 1px solid !important;
+}
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
   }
   to {
     transform: rotate(360deg);
+  }
+}
+
+@media screen and (max-width: 1023px)
+{
+  .navbar-menu.is-active {
+      position: fixed;
+      width: 100%;
+  }
+  .navbar-item, .navbar-link {
+    color: #1f3a93 !important;
   }
 }

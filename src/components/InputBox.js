@@ -26,6 +26,7 @@ const InputBox = (props) => {
         }
         
         changeData(v);
+        props.setInputData(v);
     }
     return(
         <div className={"control " + _isLoading + _hasLeftIcon + _hasRightIcon}>
@@ -61,7 +62,7 @@ const LeftIcon = (props) => {
 
 const RightIcon = (props) => {
     return(
-            <span className="icon is-small is-right">
+            <span className="icon is-small is-right" onClick={e => {console.log(e)}}>
                 <i className={"fa fa-"+props.font}></i>
             </span>
     )
